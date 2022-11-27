@@ -20,6 +20,6 @@ gh release create "v0.0.8" --generate-notes
 }
 ```
 
-# phpunit
+# Подключение в проект
 
-Переменные для env задаются в файле phpunit.xml
+В проект подключить файл bootstrap/app.php
