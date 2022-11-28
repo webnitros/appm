@@ -30,3 +30,6 @@ $app->singleton('pdotools.service', function () use ($modx) {
     }
     return $pdoTools;
 });
+
+
+$app->regFacade($app);

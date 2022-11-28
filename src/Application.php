@@ -38,7 +38,6 @@ class Application
         $app->singleton('Validator', ValidatorFactory::class);
 
 
-
         // routes
         if (is_callable($router)) {
             $app->singleton('router', Route::class);
@@ -80,11 +79,12 @@ class Application
             return new Kernel($dispatcher, $controllerResolver, new RequestStack(), $argumentResolver);
             #return new HttpKernel($dispatcher, $controllerResolver, new RequestStack(), $argumentResolver);
         });
+        return $app;
+    }
 
-
+    public function regFacade($app)
+    {
         Facade::clearResolvedInstances();
         Facade::setFacadeApplication($app);
-
-        return $app;
     }
 }
