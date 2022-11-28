@@ -9,7 +9,7 @@
     ],
     "scripts": {
         "tests" : "phpunit --bootstrap bootstrap.php",
-        "up:release": "gh release create \"v1.0.9\" --generate-notes"
+        "up:release": "gh release create \"v1.0.11\" --generate-notes"
     },
     "keywords": [
         "client"
@@ -24,7 +24,6 @@
         "symfony/http-kernel": "^5.4",
         "illuminate/http": "^8.83",
         "symfony/validator": "^5.4",
-        "illuminate/routing": "^8.83",
         "illuminate/translation": "^8.83",
         "illuminate/validation": "^8.83",
         "illuminate/cookie": "^8.83",

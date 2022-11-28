@@ -6,10 +6,9 @@ use AppM\Interfaces\ControllerInterface;
 use AppM\Interfaces\Middleware;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 use Symfony\Contracts\EventDispatcher\Event;
 
-abstract class Controller extends BaseController implements ControllerInterface
+abstract class Controller implements ControllerInterface
 {
     protected $middleware;
 
