@@ -9,7 +9,7 @@
 namespace AppM\Interfaces;
 
 
-use AppM\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent as Event;
 
