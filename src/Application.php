@@ -11,7 +11,6 @@ namespace AppM;
 use AppM\Helpers\UrlGenerator;
 use AppM\Http\Kernel;
 use Illuminate\Container\Container;
-use Illuminate\Contracts\Routing\UrlGenerator as UrlGeneratorContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Facade;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -19,7 +18,6 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
 use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 use Symfony\Component\HttpKernel\EventListener\RouterListener;
-use Symfony\Component\HttpKernel\HttpKernel;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 
@@ -56,7 +54,7 @@ class Application
 
 
         // Kernel
-        $app->singleton(HttpKernel::class, function (Container $container) {
+        $app->singleton(Kernel::class, function (Container $container) {
 
             // регистрация событи
             /* @var EventDispatcher $dispatcher */

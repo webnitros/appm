@@ -116,4 +116,34 @@ abstract class Controller extends BaseController
         return property_exists($this, 'redirectTo') ? $this->redirectTo : '/login';
     }
 
+
+    public function success($data = null, $status = 200)
+    {
+        if (!empty($data) && !is_array($data)) {
+            $data = ['message' => $data];
+        }
+        if (is_null($data)) {
+            $data = [];
+        }
+        return new JsonResponse($data, $status);
+    }
+
+    public function failure($data, $status = 422)
+    {
+        if (!is_array($data)) {
+            $data = ['message' => $data];
+        }
+        if (is_null($data)) {
+            $data = [];
+        }
+        return new JsonResponse($data, $status);
+    }
+
+    public function failureField($data, $status = 422)
+    {
+        $data = [
+            'data' => $data
+        ];
+        return $this->failure($data, $status);
+    }
 }
