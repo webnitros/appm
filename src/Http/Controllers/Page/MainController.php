@@ -20,6 +20,11 @@ class MainController extends Controller
      */
     public function index(Request $request)
     {
+        // Валидация запроса
+        $this->validatorResponse($request, [
+            'text' => 'required|min:3|max:255'
+        ]);
+
         /*$this->validate($request, [
             'password' => 'required|confirmed|min:6',
         ]);*/

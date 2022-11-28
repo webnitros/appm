@@ -498,8 +498,6 @@ trait MakesHttpRequests
     {
         /* @var HttpKernel $kernel */
         $kernel = $this->app->make(Kernel::class);
-        #$kernel = $this->app->make(HttpKernel::class);
-
 
         $files = array_merge($files, $this->extractFilesFromDataArray($parameters));
 

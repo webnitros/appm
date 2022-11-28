@@ -31,18 +31,6 @@ class Kernel extends HttpKernel
     {
         $message = $e->getMessage();
         $errors = $e->errors();
-
-        /*
-         $modx = app('modx');
-         $modx->lexicon->load('auth:errors');
-         $arrImplode = [];
-         foreach ($arrError as $field => $value) {
-             $key_error = $value[0];
-             $lexi = 'auth_' . $field . '.' . $key_error;
-             $text = $modx->lexicon($lexi);
-             $arrImplode[$field] = $text;
-         }*/
-
         return new JsonResponse([
             'message' => $message,
             'errors' => $errors,

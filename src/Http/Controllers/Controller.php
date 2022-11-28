@@ -55,25 +55,11 @@ abstract class Controller extends BaseController implements ControllerInterface
      * @param array $rules
      * @param array $messages
      * @param array $customAttributes
-     * @return bool|JsonResponse
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     protected function validatorResponse(Request $request, array $rules, array $messages = [], array $customAttributes = [])
     {
-        try {
-            $this->validator($request->all(), $rules, $messages, $customAttributes)->validate();
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            $arrError = $e->errors();
-            foreach ($arrError as $key => $value) {
-                $arrImplode[$key] = implode(', ', $arrError[$key]);
-            }
-            $message = implode(', ', $arrImplode);
-            return new JsonResponse([
-                'reason' => $message,
-                'data' => $arrImplode
-            ], $e->status);
-        }
-        return true;
+        $this->validator($request->all(), $rules, $messages, $customAttributes)->validate();
     }
 
     /**

@@ -10,7 +10,7 @@ class PageTest extends TestCase
     public function page()
     {
         $this->postJson('/api/page', [
-            'password' => 'password',
+            'text' => 'password',
         ])
             ->assertSuccessful();
     }
