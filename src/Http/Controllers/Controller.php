@@ -56,7 +56,7 @@ abstract class Controller implements ControllerInterface
      * @param array $customAttributes
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    protected function validatorResponse(Request $request, array $rules, array $messages = [], array $customAttributes = [])
+    public function validatorResponse(Request $request, array $rules, array $messages = [], array $customAttributes = [])
     {
         $this->validator($request->all(), $rules, $messages, $customAttributes)->validate();
     }
@@ -67,7 +67,7 @@ abstract class Controller implements ControllerInterface
      * @return mixed|\Illuminate\Validation\Validator
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    protected function validator(array $data, array $rules, array $messages = [], array $customAttributes = [])
+    public function validator(array $data, array $rules, array $messages = [], array $customAttributes = [])
     {
         return app('Validator')->make($data, $rules, $messages, $customAttributes);
     }
