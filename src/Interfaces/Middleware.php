@@ -8,12 +8,11 @@
 
 namespace AppM\Interfaces;
 
-
-use \AppM\Interfaces\ControllerInterface;
+use AppM\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent as Event;
 
 interface Middleware
 {
-    public function handle(ControllerInterface $controller, Request $request, Event $event): void;
+    public function handle(Controller $controller, Request $request, Event $event): void;
 }
