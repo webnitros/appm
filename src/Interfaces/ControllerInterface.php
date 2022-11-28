@@ -15,5 +15,4 @@ use Symfony\Component\HttpKernel\Event\ControllerEvent as Event;
 
 interface ControllerInterface
 {
-    public function handle(Controller $controller, Request $request, Event $event): void;
 }
