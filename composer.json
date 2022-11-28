@@ -9,7 +9,7 @@
     ],
     "scripts": {
         "tests" : "phpunit --bootstrap bootstrap.php",
-        "up:release": "gh release create \"v1.0.4\" --generate-notes"
+        "up:release": "gh release create \"v1.0.5\" --generate-notes"
     },
     "keywords": [
         "client"
@@ -27,7 +27,8 @@
         "illuminate/routing": "^8.83",
         "illuminate/translation": "^8.83",
         "illuminate/validation": "^8.83",
-        "illuminate/cookie": "^8.83"
+        "illuminate/cookie": "^8.83",
+        "illuminate/testing": "^8.83"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",

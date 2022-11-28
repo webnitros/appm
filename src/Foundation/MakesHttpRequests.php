@@ -3,6 +3,7 @@
 namespace AppM\Foundation;
 
 //use App\Console\Kernel as HttpKernel;
+use AppM\Http\Kernel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Testing\TestResponse;
@@ -496,7 +497,7 @@ trait MakesHttpRequests
     public function call($method, $uri, $parameters = [], $cookies = [], $files = [], $server = [], $content = null)
     {
         /* @var HttpKernel $kernel */
-        $kernel = $this->app->make(HttpKernel::class);
+        $kernel = $this->app->make(Kernel::class);
         #$kernel = $this->app->make(HttpKernel::class);
 
 
