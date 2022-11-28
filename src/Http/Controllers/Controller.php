@@ -36,14 +36,10 @@ abstract class Controller implements ControllerInterface
                             $middleware($reguest);
                         } else {
                             $Middleware = new $middleware();
-                            if ($Middleware instanceof Middleware) {
-                                $Middleware->handle($controller, $reguest, $event);
-                            }
+                            $Middleware->handle($controller, $reguest, $event);
                         }
                     }
                 }
-
-
             });
         }
     }
