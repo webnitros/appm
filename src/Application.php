@@ -82,7 +82,7 @@ class Application
         return $app;
     }
 
-    public function regFacade($app)
+    public static function regFacade($app)
     {
         Facade::clearResolvedInstances();
         Facade::setFacadeApplication($app);
